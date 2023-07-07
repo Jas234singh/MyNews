@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo-</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <style>
+body{
+      background-image:url("bussinessbac.jpg");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position:center;
+      background-size: cover;
+    }
+    </style>
+    
+  </head>
+  <body>
+    <div class ="container">
+        <h1 style ="margin-top:2rem;color:rgb(4, 0, 255);font-weight:bold">Explore Your favourite Business News....<span id ="resultCount"></span></h1>
+        <div class="row justify-content-evenly content">
+        <div class="card my-3 mx-5" style="width:12rem">
+      
+       </div>
+       
+       </div>
+      
+      </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+<script>
+  const fetchNews = async ()=>{
+  var url = 'https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=b3038964f59b4f548a92c4d5b7a1b47a';
+
+var req = new Request(url);
+let response ={
+  "status": "ok",
+  "totalResults": 70,
+  "articles": [
+    {
+      "source": { "id": null, "name": "CarToq.com" },
+      "author": "CarToq Editor",
+      "title": "Tata Frest: new trademark registered; could be the Curvv - CarToq.com",
+      "description": "Tata has registered a new trademark in India – Frest. It is believed that this will be the name for the production version of the Tata CURVV concept. The Curvv is a concept SUV from Tata that was showcased for the first time at the 2023 Auto Expo, where it at…",
+      "url": "https://www.cartoq.com/tata-frest-new-trademark-registered-could-be-the-curvv/",
+      "urlToImage": "https://www.cartoq.com/wp-content/uploads/2023/06/tata-frest-featured.jpg",
+      "publishedAt": "2023-06-29T17:04:53Z",
+      "content": "Tata has registered a new trademark in India – Frest. It is believed that this will be the name for the production version of the Tata CURVV concept.\r\nThe Curvv is a concept SUV from Tata that was sh… [+1908 chars]"
+    },
+    {
+      "source": { "id": "the-times-of-india", "name": "The Times of India" },
+      "author": "ETMarkets.com",
+      "title": "Market Trading Guide: Titan, Tata Motors among 8 stock recommendations for Friday - Stock Ideas - Economic Times",
+      "description": "Blue-chip Nifty 50 and Sensex indexes rallied to hit record highs on Wednesday, lifted by gains in Adani group stocks and heavyweight financials on the back of persistent foreign buying, stable macros and steady corporate earnings. Both Nifty and the BSE Sens…",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/news/market-trading-guide-titan-tata-motors-among-8-stock-recommendations-for-friday/stock-ideas/slideshow/101373253.cms",
+      "urlToImage": "https://img.etimg.com/thumb/msid-101373253,width-1070,height-580,overlay-etmarkets/photo.jpg",
+      "publishedAt": "2023-06-29T16:21:00Z",
+      "content": "Blue-chip Nifty 50 and Sensex indexes rallied to hit record highs on Wednesday, lifted by gains in Adani group stocks and heavyweight financials on the back of persistent foreign buying, stable macro… [+492 chars]"
+    },
+    {
+      "source": { "id": null, "name": "DailyFX" },
+      "author": "Diego Colman",
+      "title": "Gold Prices Teeter on Brink of Breakdown as US Yields Fly High Following US Data - DailyFX",
+      "description": "Gold prices could head lower in the near term if strong U.S. economic data lead the Fed to deliver additional monetary tightening in the coming months.",
+      "url": "https://www.dailyfx.com/news/xau-usd-gold-prices-teeter-on-brink-of-breakdown-as-us-yields-fly-high-following-us-data-20230629.html",
+      "urlToImage": "https://a.c-dn.net/b/4dKtJi/gold_prices_XAUUSD_fed.jpg",
+      "publishedAt": "2023-06-29T15:40:00Z",
+      "content": "<ul><li>Gold prices lacks directional conviction, swinging back and forth between gain and losses</li><li>Despite Wednesdays price action, the precious metal could come under pressure following the r… [+3259 chars]"
+    },
+    {
+      "source": { "id": "the-times-of-india", "name": "The Times of India" },
+      "author": "Shivendra Kumar",
+      "title": "Institutional investors flex muscle. Company resolutions see 44% jump in dissent last fiscal year - Economic Times",
+      "description": "Institutional shareholders are increasingly voting against resolutions passed by company managements, indicating a growing trend among investors to make their voices heard. In FY23, over 20% of institutional shareholders opposed 1,833 resolutions, a 44% incre…",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/news/institutional-investors-flex-muscle-company-resolutions-see-44-jump-in-dissent-last-fiscal-year/articleshow/101372556.cms",
+      "urlToImage": "https://img.etimg.com/thumb/msid-101372621,width-1070,height-580,imgsize-51848,overlay-etmarkets/photo.jpg",
+      "publishedAt": "2023-06-29T15:22:00Z",
+      "content": "Institutional shareholders' clout in shareholder meetings have grown considerably in FY 2022-23. This is apparent from the fact that the number of instances where institutional investors have voted a… [+3098 chars]"
+    },
+    {
+      "source": { "id": null, "name": "Moneycontrol" },
+      "author": "Debangana Ghosh",
+      "title": "Volatility expected in near-term on customer spending: TCS Chairman N Chandrasekaran - Moneycontrol",
+      "description": "Key growth drivers for TCS in FY23 were M&amp;A integration or divestitures, product or business model innovation, customer experience transformation, and data and analytics for improved decision-making.",
+      "url": "https://www.moneycontrol.com/news/business/volatility-expected-in-near-term-on-customer-spending-tcs-chairman-n-chandrasekaran-10879171.html",
+      "urlToImage": "https://images.moneycontrol.com/static-mcnews/2022/04/pjimage-25-770x433.jpg",
+      "publishedAt": "2023-06-29T15:08:39Z",
+      "content": "Even as Tata Consultancy Services (TCS) remains resilient, the IT services major will see volatility in demand in the near term across different markets and customer spending, said chairman N Chandra… [+3998 chars]"
+    },
+   
+    {
+      "source": { "id": "the-times-of-india", "name": "The Times of India" },
+      "author": "PTI",
+      "title": "TCS has taken action against six employees for favouring certain staffing firms: Chandrasekaran - Indiatimes.com",
+      "description": "India Business News: TCS has taken action against six employees after finding them guilty of accepting favours from certain staffing firms in the appointment of contractua",
+      "url": "https://timesofindia.indiatimes.com/business/india-business/tcs-has-taken-action-against-six-employees-for-favouring-certain-staffing-firms-chandrasekaran/articleshow/101371318.cms",
+      "urlToImage": "https://static.toiimg.com/thumb/msid-101371309,width-1070,height-580,imgsize-694050,resizemode-75,overlay-toi_sw,pt-32,y_pad-40/photo.jpg",
+      "publishedAt": "2023-06-29T14:14:00Z",
+      "content": "FD Calculator\r\nWhen investing in a fixed deposit, the amount you deposit earns interest as per the prevailing...\r\nCalculate Now"
+    },
+    {
+      "source": { "id": null, "name": "Adda247.com" },
+      "author": "saurabh",
+      "title": "Micron, Gujarat govt ink deal to set up semiconductor plant - Adda247",
+      "description": "Introduction Micron Technology Inc, a US-based semiconductor manufacturer, has signed a Memorandum of Understanding (MoU) with the Gujarat government to set up a state-of-the-art semiconductor unit in Sanand, near Ahmedabad. The project, valued at Rs 22,500 c…",
+      "url": "https://currentaffairs.adda247.com/micron-gujarat-govt-ink-deal-to-set-up-semiconductor-plant/",
+      "urlToImage": "https://adda247-wp-multisite-assets.s3.ap-south-1.amazonaws.com/wp-content/uploads/multisite/sites/5/2023/06/29191642/Micron.jpg",
+      "publishedAt": "2023-06-29T13:42:55Z",
+      "content": "Introduction\r\nMicron Technology Inc, a US-based semiconductor manufacturer, has signed a Memorandum of Understanding (MoU) with the Gujarat government to set up a state-of-the-art semiconductor unit … [+2656 chars]"
+    },
+    {
+      "source": { "id": "the-times-of-india", "name": "The Times of India" },
+      "author": "Reuters",
+      "title": "Wall St edges higher as rally in banks offset hawkish Fed jitters - Economic Times",
+      "description": "Bank shares in the US rose after major lenders cleared the Federal Reserve's annual stress test, boosting stock indexes. Bank of America, JPMorgan Chase, Goldman Sachs, and Wells Fargo all saw gains after the health check showed they had enough capital to wit…",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/news/us-stocks-rise-as-banks-gain-economic-data-eases-recession-fears/articleshow/101370664.cms",
+      "urlToImage": "https://img.etimg.com/thumb/msid-101370896,width-1070,height-580,imgsize-52988,overlay-etmarkets/photo.jpg",
+      "publishedAt": "2023-06-29T13:42:00Z",
+      "content": "U.S. stock indexes ticked up on Thursday as bank shares rose after major lenders cleared the Federal Reserve's annual stress test, while strong economic data stoked expectations of further interest r… [+2898 chars]"
+    },
+    {
+      "source": { "id": null, "name": "Moneycontrol" },
+      "author": "Moneycontrol News",
+      "title": "TD Power promoters, shareholders likely to sell 24.2% stake worth Rs 800 crore via block deal - Moneycontrol",
+      "description": "The offer price for stake sale is set at Rs 214 per share, the sources added. The price is at 4 percent discount to the company's Wednesday close.",
+      "url": "https://www.moneycontrol.com/news/business/markets/td-power-promoters-shareholders-likely-to-sell-24-2-stake-worth-rs-800-crore-via-block-deal-10878891.html",
+      "urlToImage": "https://images.moneycontrol.com/static-mcnews/2023/01/deal-1-770x433.jpg",
+      "publishedAt": "2023-06-29T13:33:07Z",
+      "content": "TD Power Systems Ltd's promoters and shareholders are likely to sell 24.2 percent stake in the company worth Rs 800 crore via block deal, sources told CNBC-TV18 on June 29.\r\nThe offer price for stake… [+1154 chars]"
+    },
+    {
+      "source": { "id": null, "name": "Moneycontrol" },
+      "author": "Moneycontrol News",
+      "title": "NSE-BSE showed maturity in reverting Bank Nifty expiry decision: Sebi's Madhabi Buch - Moneycontrol",
+      "description": "Earlier in the week, NSE relented to BSE’s request that the former does not shift the expiry of Bank Nifty contracts to Friday which would have clashed with recently relaunched Bankex and Sensex futures and options contracts, leading to stifling their growth.",
+      "url": "https://www.moneycontrol.com/news/business/markets/nse-bse-showed-maturity-in-reverting-bank-nifty-expiry-decision-sebis-madhabi-buch-10878411.html",
+      "urlToImage": "https://images.moneycontrol.com/static-mcnews/2022/11/Madhabi-Puri-Buch-pic-1-770x433.jpg",
+      "publishedAt": "2023-06-29T13:14:13Z",
+      "content": "Securities and Exchange Board of India (Sebi) Chairperson Madhabi Puri Buch, on June 28, though not explicitly but indicated that the regulator might have played a role in NSEs reversal of decision o… [+1668 chars]"
+    },
+    {
+      "source": { "id": "the-times-of-india", "name": "The Times of India" },
+      "author": "Shivendra Kumar",
+      "title": "HUL just 2% shy of its 52-week high. Should you buy on current trends? - Economic Times",
+      "description": "Hindustan Unilever (HUL) shares are trading near their 52-week high but lack momentum due to a strong resistance zone around 2,700-2,720. Until this resistance is broken, the stock is expected to trade sideways. Technical analysts suggest a strong support at …",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/news/hul-just-2-shy-of-its-52-week-high-should-you-buy-on-current-trends/articleshow/101369729.cms",
+      "urlToImage": "https://img.etimg.com/thumb/msid-101369741,width-1070,height-580,imgsize-21630,overlay-etmarkets/photo.jpg",
+      "publishedAt": "2023-06-29T13:10:00Z",
+      "content": "Hindustan Unilever (HUL) shares are just 2% shy of their 52-week high, but lack steam despite trading above their 50-day Simple Moving Average (SMA) and 200-day SMA for quite some time. Investors wil… [+2884 chars]"
+    },
+    
+    {
+      "source": { "id": null, "name": "NDTV News" },
+      "author": null,
+      "title": "WHO To NDTV On Cancer Concerns Over Popular Artificial Sweetener Aspartame - NDTV",
+      "description": "The WHO response comes more than a month after it warned against the use of artificial sweeteners.",
+      "url": "https://www.ndtv.com/india-news/who-to-ndtv-on-cancer-concerns-over-popular-artificial-sweetener-aspartame-4163558",
+      "urlToImage": "https://i.ndtvimg.com/i/2016-01/soft-drink_650x400_71452151537.jpg",
+      "publishedAt": "2023-06-29T12:44:25Z",
+      "content": "A WHO committee has assessed 1,300 studies on artificial sweeteners in its June review.\r\nThe World Health Organisation (WHO) has reacted to a news report that talks about artificial sweeteners, espec… [+2074 chars]"
+    },
+    {
+      "source": { "id": null, "name": "Moneycontrol" },
+      "author": "Moneycontrol News",
+      "title": "Correction in new-tech stocks healthy; quality-at-any-price strategy at the receiving end: Anand Shah - Moneycontrol",
+      "description": "Shah emphasized the importance of investing in good quality businesses but at reasonable prices.",
+      "url": "https://www.moneycontrol.com/news/business/markets/correction-in-new-tech-stocks-healthy-quality-at-any-price-strategy-at-the-receiving-end-anand-shah-10878421.html",
+      "urlToImage": "https://images.moneycontrol.com/static-mcnews/2022/12/Anand-Shah-Picture-770x433.jpg",
+      "publishedAt": "2023-06-29T12:37:34Z",
+      "content": "In an exclusive interview with Moneycontrol, Anand Shah, head of PMS and AIF at ICICI Prudential, shared his perspective on the current bubble and alpha territory in the markets. Shah expressed that … [+1901 chars]"
+    },
+    {
+      "source": { "id": null, "name": "Carwale.com" },
+      "author": "Pawan Mudaliar",
+      "title": "Kia Seltos facelift HTK and HTK+ variants interior leaked - CarWale",
+      "description": "While we are a few days away from the official launch of the Kia Seltos facelift, a new set of its spy pictures have surfaced on the net. This time, the leaked images reveal the interior of the HTK and HTK+ trims of the Kia Seltos facelift. Let us take a look…",
+      "url": "https://www.carwale.com/news/kia-seltos-facelift-htk-and-htk-variants-interior-leaked/",
+      "urlToImage": "https://imgd.aeplcdn.com/642x336/n/cw/ec/151695/kia-seltos-facelift-left-front-three-quarter2.jpeg?isig=0&art=1&q=75",
+      "publishedAt": "2023-06-29T12:30:05Z",
+      "content": "- HTE variant to get digital drivers display and front parking sensors\r\n- Automatic climate control to debut in HTK+ variant \r\nWhile we are a few days away from the official launch of the Kia Seltos … [+1495 chars]"
+    },
+    {
+      "source": { "id": null, "name": "GaadiWaadi.com" },
+      "author": "Surendhar M",
+      "title": "5 Upcoming Mahindra SUVs In India - 5-Door Thar To BE.05 - GaadiWaadi.com",
+      "description": "In the list of upcoming Mahindra SUVs, we have brought you all the key details from the prototypes that have been caught testing",
+      "url": "https://gaadiwaadi.com/5-upcoming-mahindra-suvs-in-india-5-door-thar-to-be-05/",
+      "urlToImage": "https://gaadiwaadi.com/wp-content/uploads/2022/12/5-door-mahindra-thar-render.jpg",
+      "publishedAt": "2023-06-29T12:29:30Z",
+      "content": "Mahindra &amp; Mahindra has been working on a number of new SUVs and some of them have already been spotted testing. Here we talk about the five upcoming SUVs from the homegrown manufacturer and thei… [+1886 chars]"
+    },
+    {
+      "source": { "id": "techcrunch", "name": "TechCrunch" },
+      "author": "Manish Singh",
+      "title": "India’s startup funding slides 68% after Tiger and SoftBank make virtually no deals - TechCrunch",
+      "description": "Indian startups experienced a significant contraction in funding in the first half of 2023 as some kingmakers quelled new investments.",
+      "url": "https://techcrunch.com/2023/06/29/india-startup-funding-slides-after-tiger-and-softbank-make-virtually-no-deals/",
+      "urlToImage": "https://techcrunch.com/wp-content/uploads/2023/06/GettyImages-1257740205.jpg?resize=1200,800",
+      "publishedAt": "2023-06-29T12:27:46Z",
+      "content": "Indian startups experienced a significant contraction in funding in the first half of 2023 as some kingmaker late-stage backers quelled new investments in the South Asian nation amid a slowdown in th… [+4897 chars]"
+    },
+    {
+      "source": { "id": null, "name": "Moneycontrol" },
+      "author": "Sunil Shankar Matkar",
+      "title": "Trade setup for Friday: Top 15 things to know before the opening bell - Moneycontrol",
+      "description": "Rupak De of LKP Securities sees the immediate resistance for the Nifty index at 19,000. If the Nifty convincingly breaks above this level, it may induce an upward movement towards 19,450, he says.",
+      "url": "https://www.moneycontrol.com/news/business/markets/trade-setup-for-friday-top-15-things-to-know-before-the-opening-bell-41-10878061.html",
+      "urlToImage": "https://images.moneycontrol.com/static-mcnews/2023/06/Sensex-Nifty-Markets-7-770x433.jpg",
+      "publishedAt": "2023-06-29T11:57:44Z",
+      "content": "It was a historic day for the market as the Nifty50 touched a new milestone of 19,000 mark on June 28, the monthly F&amp;O expiry day. We have seen every sector participate in the rally, while the br… [+9784 chars]"
+    },
+    {
+      "source": { "id": null, "name": "Moneycontrol" },
+      "author": "Moneycontrol News",
+      "title": "Fire breaks out in BharatPe's Malviya Nagar warehouse - Moneycontrol",
+      "description": "Swipe machines, soundboxes and other company material worth Rs 50 lakh damaged in fire",
+      "url": "https://www.moneycontrol.com/news/business/startup/fire-breaks-out-in-bharatpes-malviya-nagar-warehouse-10878131.html",
+      "urlToImage": "https://images.moneycontrol.com/static-mcnews/2020/11/BharatPe-770x433.jpg",
+      "publishedAt": "2023-06-29T11:34:44Z",
+      "content": "A fire broke out in fintech unicorn BharatPe's warehouse in Malviya Nagar area of Delhi last night due to an electrical short-circuit, damaging swipe machines, soundboxes and other company material w… [+496 chars]"
+    }
+  ]
+}
+
+
+    
+console.log(response);
+let str ="";
+
+for(let item of response.articles){
+
+ 
+ 
+ 
+ str =str+`<div class="card my-5 mx-10 border-success" style="width:15rem;height:22rem;font-family:Roboto Slab">
+   <img src="${item.urlToImage}" class="card-img-top" alt="..." style ="border-radius:0.8rem;width:10rem;height:4.6rem;margin:0.4rem 1rem;">
+   <div class="card-body text-dark">
+  <h6 class="card-title style ="width:0.7rem;height:0rem;padding:0px;color:red">${item.title}</h6>
+     <p class="card-text pb-23" style ="width:10rem;height:3.6rem;margin-bottom:1rem;overflow:hidden;font-size:10px;font-family:poltawski Novy">${item.description}</p>
+     <a href="${item.url}"  class="btn btn-primary class="text-center" style ="width:9rem;height:2.6rem;,margin-top:0.2rem;margin-bottom:0rem;overflow:hidden;text-align:center;font-family:poppins">Read</a>
+   </div>
+ </div>`
+}
+
+
+document.querySelector(".content").innerHTML = str;
+
+}
+ fetchNews(1);
+
+     </script>
+  </body>
+</html>

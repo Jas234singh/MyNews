@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel ="stylesheet" href ="inweather.css">
+    
+    <style>
+        
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;0,700;0,800;1,400;1,500&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500&family=Poppins:ital,wght@0,200;0,400;0,600;0,700;0,800;1,400;1,500&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500&family=Poppins:ital,wght@0,200;0,400;0,600;0,700;0,800;1,400;1,500&family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300;1,500&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Oswald:wght@200;300;400;500&family=Poppins:ital,wght@0,200;0,400;0,600;0,700;0,800;1,400;1,500&family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300;1,500&display=swap');
+    </style>
+</head>
+<body>
+    <div class ="acontainer">
+        <video autoplay muted loop  id="myVideo" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+            <source src="weabackvideo.mp4" type="video/mp4">
+          </video>
+        <div class ="container">
+            <div class ="col-1">
+                <div>
+<form>
+    <button type ="submit" id ="btn">
+        <input type ="text" id ="inpt">
+    <i class ="bi bi-search" id ="searchicon"></i>
+    </button>
+    
+</form>
+                </div>
+                <div class ="weather-icon">
+                    <img src ="flations.com/sun.png" alt ="" id ="icon" >
+                </div>
+                <!-- temp -->
+                <div class ="temp">
+                    <h1 style ="font-size:3rem;margin-top:0.8rem;margin-left:12px">0<span>&#8451</span></h1>
+                </div>
+
+                <!-- day,date -->
+                <div class ="date-day">
+                    <p style ="font-family:Poppins,Ubuntu,Merriweather;font-weight:700;font-size: x-large;margin-left:12px" id ="day-time">Monday , 11:00</p>
+                </div>
+                <hr style ="width:15rem;padding-left:1px">
+                <div class ="con-perci">
+                    <div class ="condition">
+                        <i class="bi bi-cloud" style ="font-size:xx-large"></i>
+                        <p style ="padding-left:5rem;">Condition</p>
+                    </div>
+                </div>
+                <div class ="percipitation">
+                    <div class ="percipi">
+                        <i class="bi bi-droplet-fill"  style ="font-size:xx-large"></i>
+                        <p style ="padding-left:5rem;">Percipitation -0%</p>
+                    </div>
+                </div>
+                <div class ="location">
+                    <div class="loc-icon">
+                        <i class="bi bi-geo-alt-fill" style ="font-size:xx-large"></i>
+                    </div>
+                    <div class="loc-text">
+<p style ="padding-left:5rem";>location</p>
+                    </div>
+                </div>
+                </div>
+                <div class ="col-2">
+    <div class ="to-we-c-f">
+
+<nav class ="today-week-celsius-farenheit">
+<ul class ="t-w">
+<li>Today</li>
+<li>Week</li>
+
+</ul>
+<ul class ="c-f">
+    <li>&#8451</li>
+    <li>&#8457</li>
+</ul>
+
+
+
+
+</nav>
+
+
+    </div>
+    <!-- days weather -->
+    <div class ="days">
+        <div class ="par-day">
+          <div> <p style ="margin-top:0.1rem;font-family:Merriweather">Monday</p> </div>  
+            <div> <img src ="flations.com/clouds.png" id ="clouds"></div>
+            <div> <p style ="font-family:Merriweather">32 &#8451</p></div>
+        </div>
+
+    </div>
+    <div class ="today-highlights"><p>Today Highlight's</p></div>
+    <div class ="days-highlights1">
+        <div class ="uv" id ="uv">
+            <div style ="display:flex;margin:auto;align-items:center;justify-content:center;margin-top:0px;font-family:Oswald"><p >uv</p></div>
+            <div><p style ="display:flex;margin:auto;align-items:center;justify-content:center;font-family:Oswald;margin-top:0px">0</p></div>
+            <div class ="low"><p >low</p></div>
+        </div>
+        <div class ="uv">
+            <div style ="display:flex;margin:auto;align-items:center;justify-content:center;margin-top:0px;font-family:Oswald"><p >uv</p></div>
+            <div><p style ="display:flex;margin:auto;align-items:center;justify-content:center;font-family:Oswald">0</p></div>
+            <div class ="low"><p >low</p></div>
+        </div>
+        <div class ="uv">
+            <div style ="display:flex;margin:auto;align-items:center;justify-content:center;margin-top:0px;font-family:Oswald"><p >uv</p></div>
+            <div><p style ="display:flex;margin:auto;align-items:center;justify-content:center;font-family:Oswald">0</p></div>
+            <div class ="low"><p >low</p></div>
+        </div>
+        </div>
+        <div class ="days-highlights2">
+
+            <div class ="uv" id ="wind-speed">
+                <div style ="display:flex;margin:auto;align-items:center;justify-content:center;margin-top:0px;font-family:Oswald"><p >uv</p></div>
+                <div><p style ="display:flex;margin:auto;align-items:center;justify-content:center;font-family:Oswald">0</p></div>
+                <div class ="low"><p >low</p></div>
+            </div>
+            <div class ="uv">
+                <div style ="display:flex;margin:auto;align-items:center;justify-content:center;margin-top:0px;font-family:Oswald"><p >uv</p></div>
+                <div><p style ="display:flex;margin:auto;align-items:center;justify-content:center;font-family:Oswald">0</p></div>
+                <div class ="low"><p >low</p></div>
+            </div>
+            <div class ="uv">
+                <div style ="display:flex;margin:auto;align-items:center;justify-content:center;margin-top:0px;font-family:Oswald"><p >uv</p></div>
+                <div><p style ="display:flex;margin:auto;align-items:center;justify-content:center;font-family:Oswald">0</p></div>
+                <div class ="low"><p >low</p></div>
+            </div>
+        </div>
+        
+    </div>
+                </div>
+               
+                </div>
+                
+     
+    </div>
+    
+   
+    <script src ="inweather.js"></script>
+</body>
+</html>

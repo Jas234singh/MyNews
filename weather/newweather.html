@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Website</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+    
+@import url('https://fonts.googleapis.com/css2?family=Poltawski+Nowy&family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poltawski+Nowy&family=Roboto+Slab&family=Ubuntu:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arvo:wght@700&family=Poltawski+Nowy&family=Roboto+Slab&family=Ubuntu:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arvo:wght@700&family=Poltawski+Nowy&family=Poppins&family=Roboto+Slab&family=Ubuntu:wght@300&display=swap');
+</style>
+  <style>
+   
+    #myVideo{
+   z-index:-1;
+   
+   position: fixed;
+     right: 0;
+     bottom: 0;
+     min-width: 100%;
+     min-height: 100%;
+   
+   
+   
+   
+   }
+   input{
+    padding:1rem;
+    border-radius:4rem;
+    text-align:center;
+    font-family:Poppins;
+    color:black;
+    font-weight:bold;
+    border:2px solid black;
+    /* border-right: none; */
+    text-shadow:2px;
+   }
+   button{
+    padding:1rem;
+    border-radius:4rem;
+    text-align:center;
+    font-family:Poppins;
+    color:black;
+    font-weight:bold;
+    border:2px solid black;
+    text-shadow:2px;
+   }
+   input:hover{
+    background-color: aqua;
+   }
+   button:hover{
+    background-color: rgb(55, 199, 199);
+   }
+
+    .container {
+      max-width:auto;
+      max-height:100%;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+      background-color: rgb(147 220 232 / 95%);
+      
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    #weather-icon {
+      width: 200px;
+      height: 200px;
+      color:blue;
+      margin-bottom:0;
+    }
+
+    #weather-data {
+      margin-top: 50px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+      text-decoration-color: blueviolet;
+      text-shadow: #333;
+      
+    }
+    .conn{
+      margin-top:3rem;
+      display:flex;
+      margin-right:auto;
+      align-items:center;
+      justify-content:center;
+    }
+    #desc{
+    align-items: flex-start;
+    }
+    #temp{
+align-items:flex-start;
+    }
+  </style>
+</head>
+<body>
+ 
+    <video autoplay muted loop  id="myVideo" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+      <source src="reweabac.mp4" type="video/mp4">
+    </video>
+    <div class ="conn">
+      <div class ="container">
+        <div class ="col-1">
+            <div>
+      <h1>Weather App</h1>
+      <form id="weather-form">
+        <input type="text" id="location-input" placeholder="Enter location">
+        <button type="submit" >Get Weather</button>
+      </form>
+      <div id="weather-data"></div>
+    </div>
+    </div>
+  
+
+  <script>
+    const weatherForm = document.querySelector("#weather-form");
+    const locationInput = document.querySelector("#location-input");
+    const weatherData = document.querySelector("#weather-data");
+
+    weatherForm.addEventListener("submit", e => {
+      e.preventDefault();
+      const location = locationInput.value;
+
+      // Make API call to fetch weather data
+      fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=b28a7af2d6595741c1ffbc91a03b7f53&units=metric`)
+        .then(response => response.json())
+        .then(data => {
+          const { name, main, weather } = data;
+          const temperature = main.temp;
+          const description = weather[0].description;
+          const icon = weather[0].icon;
+
+          const weatherInfo = `
+            <h2 style ="margin-bottom:0;font-family:Poppins">${name}</h2>
+            <img src="http://openweathermap.org/img/w/${icon}.png" id="weather-icon" alt="Weather Icon" style ="margin-bottom:0;font-family:Poppins;color:blue;opacity:100rem;">
+            <p style ="margin-bottom:2px;font-family:Ubuntu;font-style:200px;margin-right:1rem;font-weight:bold;font-shadow;float:left" id ="temp">Temperature: ${temperature}°C</p>
+            <p style ="margin-bottom:0;font-family:Ubuntu;font-style:200px;display:flex;align-items:center;font-weight:bold;justify-content:center;flex-direction:column;margin-right:1rem" id ="desc">Description: ${description}</p>
+          `;
+
+          weatherData.innerHTML = weatherInfo;
+        })
+        .catch(error => {
+          console.log("Error:", error);
+          weatherData.innerHTML = "<p>Failed to fetch weather data. Please try again.</p>";
+        });
+    });
+  </script>
+</body>
+</html>
